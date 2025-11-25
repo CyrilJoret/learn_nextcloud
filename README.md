@@ -1,6 +1,25 @@
 # Steps
 
-## On the windows host - Set a vagrant VM
+## 1 - On the windows host - Create a SFTP acces
+
+* Install Choco package openssh
+
+<code>choco install openssh
+cd "C:\Program Files\OpenSSH-Win64"
+powershell.exe -ExecutionPolicy Bypass -File install-sshd.ps1</code>
+
+* Create a new windows user and set privileges on folder to share
+
+* Modify **_C:\ProgramData\ssh\sshd_config_** to limit user to the shared folder
+
+<code>Match User nextcloudread
+	ChrootDirectory "z:\"
+	X11Forwarding no
+	AllowTcpForwarding no
+	PermitTTY no
+	ForceCommand internal-sftp</code>
+
+## 2 - On the windows host - Set a vagrant VM
 
 * Install a virtualisation solution (VirtualBox, HyperV, Qemu, ....)
   
@@ -8,7 +27,7 @@
   
 * Create a Vagrant VM with the box **_generic-x64/debian12_** and a bridge network
 
-## On the Vagrant VM - Start Nextcloud with docker
+## 3 - On the Vagrant VM - Start Nextcloud with docker
 
 * SSH in the Vgarant VM
   
@@ -39,7 +58,7 @@ dns-nameserver 192.168.1.1
 
 <code>docker run -v /var/www/html:/var/www/html -p 80:80 -d nextcloud</code>
 
-## In Nextcloud - Make the first connexion
+## 4 - In Nextcloud - Make the first connexion
 
 * Connect to the nextcloud web interface
   
@@ -47,18 +66,6 @@ dns-nameserver 192.168.1.1
   
 * Activate **_External storage support_**
 
-## On the windows host - Create a SFTP acces
-
-* Install Choco package openssh
-
-<code>choco install openssh
-cd "C:\Program Files\OpenSSH-Win64"
-powershell.exe -ExecutionPolicy Bypass -File install-sshd.ps1</code>
-
-* Create a new windows user and set privileges on folder to share
-
+* Add an SFTP external storage with sftp settings created at step 1
 
 # TODO
-
-
-Modify config of open ssh for this user
