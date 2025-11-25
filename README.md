@@ -28,6 +28,8 @@ dns-nameserver 192.168.1.1
 <code>sudo apt install docker.io</code>
 
 * Add vagrant user to docker group
+
+<code>sudo usermod -aG docker $USER</code>
   
 * Create a container for Postgres :
 
