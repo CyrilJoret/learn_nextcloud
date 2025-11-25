@@ -29,7 +29,7 @@ dns-nameserver 192.168.1.1
 
 * Create a container for NextCloud :
 
-<code>docker run -v /var/www/html:/var/www/html -p 80:80 -d nextcloud<code>
+<code>docker run -v /var/www/html:/var/www/html -p 80:80 -d nextcloud</code>
 
 ## In Nextcloud - Make the first connexion
 * Connect to the nextcloud web interface
