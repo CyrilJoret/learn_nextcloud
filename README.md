@@ -49,5 +49,9 @@ dns-nameserver 192.168.1.1
 
 ## On the windows host - Create a SFTP acces
 
+* Install Choco package openssh
+choco install openssh
+cd "C:\Program Files\OpenSSH-Win64"
+powershell.exe -ExecutionPolicy Bypass -File install-sshd.ps1
 
 
