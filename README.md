@@ -1,6 +1,6 @@
 # Steps
 
-## On the host - Set a vagrant VM
+## On the windows host - Set a vagrant VM
 
 * Install a virtualisation solution (VirtualBox, HyperV, Qemu, ....)
   
@@ -46,5 +46,8 @@ dns-nameserver 192.168.1.1
 * Set an admin acount and a connexion to the postgres DB
   
 * Activate **_External storage support_**
+
+## On the windows host - Create a SFTP acces
+
 
 
