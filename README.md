@@ -52,11 +52,11 @@ dns-nameserver 192.168.1.1
   
 * Create a container for Postgres :
 
-<code>docker run -e POSTGRES_PASSWORD=xxxxxxxxxx -v /var/lib/postgresql/18/docker:/var/lib/postgresql/18/docker -p 5432:5432 -d postgres:18</code>
+<code>docker run --restart=always -e POSTGRES_PASSWORD=xxxxxxxxxx -v /var/lib/postgresql/17/docker:/var/lib/postgresql/17/docker -p 5432:5432 -d postgres:17</code>
 
 * Create a container for NextCloud :
 
-<code>docker run -v /var/www/html:/var/www/html -p 80:80 -d nextcloud</code>
+<code>docker run --restart=always -v /var/www/html:/var/www/html -p 80:80 -d nextcloud</code>
 
 ## 4 - In Nextcloud - Make the first connexion
 
@@ -68,4 +68,25 @@ dns-nameserver 192.168.1.1
 
 * Add an SFTP external storage with sftp settings created at step 1
 
+## 5 - Acces from internet
+
+* Create a dyndns domain name
+
+* Set NAT ports on router
+
+* Modify trusted_domains in config.php with the dyndns domain name
+
+
+
+
+
+
+
+
 # TODO
+Learn docker compose
+Add a Traefik reverse proxy
+Active Email
+Describe what to backup
+Monitoring
+Activate HTTPS
