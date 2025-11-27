@@ -90,3 +90,7 @@ Active Email
 Describe what to backup
 Monitoring
 Activate HTTPS
+
+Set NET port on Hyper-V
+https://www.techbloat.com/how-to-forward-ports-to-a-virtual-machine-and-use-it-as-a-server.html
+
